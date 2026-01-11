@@ -92,6 +92,149 @@ export const ENDPOINT_TYPE = {
     GEMINI_MODEL_LIST: 'gemini_model_list',
 };
 
+// ==================== Warmup 请求处理 ====================
+
+/**
+ * 检测是否为 Claude Code 的 Warmup 请求
+ * @param {Object} requestBody - 请求体
+ * @returns {boolean} - 是否为 Warmup 请求
+ */
+function _isWarmupRequest(requestBody) {
+    try {
+        const messages = requestBody.messages;
+        if (!messages || !Array.isArray(messages) || messages.length === 0) {
+            return false;
+        }
+
+        const firstMessage = messages[0];
+        if (!firstMessage || firstMessage.role !== 'user') {
+            return false;
+        }
+
+        // 检查 content 是否包含特定的 warmup 标记
+        const content = firstMessage.content;
+        if (typeof content === 'string') {
+            return content.includes('%%%DIFFSENTINEL%%%');
+        }
+
+        if (Array.isArray(content)) {
+            return content.some(item =>
+                item.type === 'text' && item.text && item.text.includes('%%%DIFFSENTINEL%%%')
+            );
+        }
+
+        return false;
+    } catch (error) {
+        console.error('[Warmup] Error checking warmup request:', error);
+        return false;
+    }
+}
+
+/**
+ * 处理 Warmup 请求，返回模拟的成功响应
+ * @param {http.ServerResponse} res - HTTP 响应对象
+ * @param {Object} requestBody - 请求体
+ * @param {string} endpointType - 端点类型
+ */
+function _handleWarmupRequest(res, requestBody, endpointType) {
+    const model = requestBody.model || 'claude-sonnet-4-5-20250929';
+    const isStream = requestBody.stream === true;
+
+    if (endpointType === ENDPOINT_TYPE.CLAUDE_MESSAGE) {
+        if (isStream) {
+            // 流式响应
+            res.writeHead(200, {
+                'Content-Type': 'text/event-stream',
+                'Cache-Control': 'no-cache',
+                'Connection': 'keep-alive',
+            });
+
+            const messageId = `msg_warmup_${Date.now()}`;
+
+            // 发送 message_start 事件
+            res.write(`event: message_start\ndata: ${JSON.stringify({
+                type: 'message_start',
+                message: {
+                    id: messageId,
+                    type: 'message',
+                    role: 'assistant',
+                    content: [],
+                    model: model,
+                    stop_reason: null,
+                    stop_sequence: null,
+                    usage: { input_tokens: 10, output_tokens: 0 }
+                }
+            })}\n\n`);
+
+            // 发送 content_block_start 事件
+            res.write(`event: content_block_start\ndata: ${JSON.stringify({
+                type: 'content_block_start',
+                index: 0,
+                content_block: { type: 'text', text: '' }
+            })}\n\n`);
+
+            // 发送 content_block_delta 事件
+            res.write(`event: content_block_delta\ndata: ${JSON.stringify({
+                type: 'content_block_delta',
+                index: 0,
+                delta: { type: 'text_delta', text: 'Warmup completed.' }
+            })}\n\n`);
+
+            // 发送 content_block_stop 事件
+            res.write(`event: content_block_stop\ndata: ${JSON.stringify({
+                type: 'content_block_stop',
+                index: 0
+            })}\n\n`);
+
+            // 发送 message_delta 事件
+            res.write(`event: message_delta\ndata: ${JSON.stringify({
+                type: 'message_delta',
+                delta: { stop_reason: 'end_turn', stop_sequence: null },
+                usage: { output_tokens: 5 }
+            })}\n\n`);
+
+            // 发送 message_stop 事件
+            res.write(`event: message_stop\ndata: ${JSON.stringify({
+                type: 'message_stop'
+            })}\n\n`);
+
+            res.end();
+        } else {
+            // 非流式响应
+            const response = {
+                id: `msg_warmup_${Date.now()}`,
+                type: 'message',
+                role: 'assistant',
+                content: [{ type: 'text', text: 'Warmup completed.' }],
+                model: model,
+                stop_reason: 'end_turn',
+                stop_sequence: null,
+                usage: { input_tokens: 10, output_tokens: 5 }
+            };
+
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify(response));
+        }
+    } else {
+        // OpenAI 格式的响应
+        const response = {
+            id: `chatcmpl-warmup-${Date.now()}`,
+            object: 'chat.completion',
+            created: Math.floor(Date.now() / 1000),
+            model: model,
+            choices: [{
+                index: 0,
+                message: { role: 'assistant', content: 'Warmup completed.' },
+                finish_reason: 'stop'
+            }],
+            usage: { prompt_tokens: 10, completion_tokens: 5, total_tokens: 15 }
+        };
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(response));
+    }
+}
+
 export const FETCH_SYSTEM_PROMPT_FILE = path.join(process.cwd(), 'configs', 'fetch_system_prompt.txt');
 export const INPUT_SYSTEM_PROMPT_FILE = path.join(process.cwd(), 'configs', 'input_system_prompt.txt');
 
@@ -415,6 +558,13 @@ export async function handleContentGenerationRequest(req, res, service, endpoint
     const originalRequestBody = await getRequestBody(req);
     if (!originalRequestBody) {
         throw new Error("Request body is missing for content generation.");
+    }
+
+    // 检测并处理 Claude Code 的 Warmup 请求
+    const isWarmupRequest = _isWarmupRequest(originalRequestBody);
+    if (isWarmupRequest) {
+        console.log('[Content Generation] Detected Warmup request, returning mock response');
+        return _handleWarmupRequest(res, originalRequestBody, endpointType);
     }
 
     const clientProviderMap = {

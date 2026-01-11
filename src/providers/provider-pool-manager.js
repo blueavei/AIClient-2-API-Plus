@@ -28,18 +28,22 @@ export class ProviderPoolManager {
         // 使用 ?? 运算符确保 0 也能被正确设置，而不是被 || 替换为默认值
         this.maxErrorCount = options.maxErrorCount ?? 3; // Default to 3 errors before marking unhealthy
         this.healthCheckInterval = options.healthCheckInterval ?? 10 * 60 * 1000; // Default to 10 minutes
-        
+
+        // 不健康 provider 自动恢复检测间隔（默认 5 分钟）
+        this.unhealthyCheckInterval = options.unhealthyCheckInterval ?? 5 * 60 * 1000;
+        this.unhealthyCheckTimer = null;
+
         // 日志级别控制
         this.logLevel = options.logLevel || 'info'; // 'debug', 'info', 'warn', 'error'
-        
+
         // 添加防抖机制，避免频繁的文件 I/O 操作
         this.saveDebounceTime = options.saveDebounceTime || 1000; // 默认1秒防抖
         this.saveTimer = null;
         this.pendingSaves = new Set(); // 记录待保存的 providerType
-        
+
         // Fallback 链配置
         this.fallbackChain = options.globalConfig?.providerFallbackChain || {};
-        
+
         // Model Fallback 映射配置
         this.modelFallbackMapping = options.globalConfig?.modelFallbackMapping || {};
 
@@ -783,6 +787,90 @@ export class ProviderPoolManager {
             this._log('info', `configs/provider_pools.json updated successfully for types: ${typesToSave.join(', ')}`);
         } catch (error) {
             this._log('error', `Failed to write provider_pools.json: ${error.message}`);
+        }
+    }
+
+    /**
+     * 启动不健康 provider 的定时恢复检测
+     * 只有不健康的 provider 才会被检测，健康的不会被检测
+     */
+    startUnhealthyProviderChecker() {
+        if (this.unhealthyCheckTimer) {
+            this._log('warn', 'Unhealthy provider checker is already running');
+            return;
+        }
+
+        this._log('info', `Starting unhealthy provider checker (interval: ${this.unhealthyCheckInterval / 1000}s)`);
+
+        this.unhealthyCheckTimer = setInterval(async () => {
+            await this.performUnhealthyProvidersCheck();
+        }, this.unhealthyCheckInterval);
+    }
+
+    /**
+     * 停止不健康 provider 的定时恢复检测
+     */
+    stopUnhealthyProviderChecker() {
+        if (this.unhealthyCheckTimer) {
+            clearInterval(this.unhealthyCheckTimer);
+            this.unhealthyCheckTimer = null;
+            this._log('info', 'Unhealthy provider checker stopped');
+        }
+    }
+
+    /**
+     * 只检测不健康的 provider，尝试恢复它们
+     * 如果检测成功则标记为健康，如果仍然失败则保持不健康状态
+     */
+    async performUnhealthyProvidersCheck() {
+        const unhealthyProviders = [];
+
+        // 收集所有不健康且未禁用的 provider
+        for (const providerType in this.providerStatus) {
+            for (const providerStatus of this.providerStatus[providerType]) {
+                if (!providerStatus.config.isHealthy && !providerStatus.config.isDisabled) {
+                    unhealthyProviders.push({
+                        providerType,
+                        providerConfig: providerStatus.config
+                    });
+                }
+            }
+        }
+
+        if (unhealthyProviders.length === 0) {
+            this._log('debug', 'No unhealthy providers to check');
+            return;
+        }
+
+        this._log('info', `Checking ${unhealthyProviders.length} unhealthy provider(s) for recovery...`);
+
+        for (const { providerType, providerConfig } of unhealthyProviders) {
+            try {
+                // 强制检测，忽略 checkHealth 配置
+                const healthResult = await this._checkProviderHealth(providerType, providerConfig, true);
+
+                if (healthResult === null) {
+                    this._log('debug', `Health check for ${providerConfig.uuid} (${providerType}) skipped: Check not implemented.`);
+                    continue;
+                }
+
+                if (healthResult.success) {
+                    // 检测成功，恢复健康状态
+                    this.markProviderHealthy(providerType, providerConfig, false, healthResult.modelName);
+                    this._log('info', `[Recovery] Provider ${providerConfig.customName || providerConfig.uuid} (${providerType}) recovered to healthy status`);
+                } else {
+                    // 检测仍然失败，更新检测时间但保持不健康状态
+                    providerConfig.lastHealthCheckTime = new Date().toISOString();
+                    if (healthResult.modelName) {
+                        providerConfig.lastHealthCheckModel = healthResult.modelName;
+                    }
+                    providerConfig.lastErrorMessage = healthResult.errorMessage;
+                    this._log('debug', `[Recovery] Provider ${providerConfig.customName || providerConfig.uuid} (${providerType}) still unhealthy: ${healthResult.errorMessage}`);
+                    this._debouncedSave(providerType);
+                }
+            } catch (error) {
+                this._log('error', `[Recovery] Health check failed for ${providerConfig.uuid} (${providerType}): ${error.message}`);
+            }
         }
     }
 

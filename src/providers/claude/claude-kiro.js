@@ -899,21 +899,6 @@ async initializeAuth(forceRefresh = false) {
             // 设置 currentContent 为 "Continue"，因为我们需要一个 user 消息来触发 AI 继续
             currentContent = 'Continue';
         } else {
-            // 最后一条消息是 user，需要确保 history 最后一个元素是 assistantResponseMessage
-            // Kiro API 要求 history 必须以 assistantResponseMessage 结尾
-            if (history.length > 0) {
-                const lastHistoryItem = history[history.length - 1];
-                if (!lastHistoryItem.assistantResponseMessage) {
-                    // 最后一个不是 assistantResponseMessage，需要补全一个空的
-                    console.log('[Kiro] History does not end with assistantResponseMessage, adding empty one');
-                    history.push({
-                        assistantResponseMessage: {
-                            content: 'Continue'
-                        }
-                    });
-                }
-            }
-            
             // 处理 user 消息
             if (Array.isArray(currentMessage.content)) {
                 for (const part of currentMessage.content) {
@@ -947,6 +932,38 @@ async initializeAuth(forceRefresh = false) {
             // Kiro API 要求 content 不能为空，即使有 toolResults
             if (!currentContent) {
                 currentContent = currentToolResults.length > 0 ? 'Tool results provided.' : 'Continue';
+            }
+
+            // 最后一条消息是 user，需要确保 history 最后一个元素是 assistantResponseMessage
+            // Kiro API 要求 history 必须以 assistantResponseMessage 结尾
+            // 修复：将末尾的 userInputMessage 合并到 currentMessage，而不是添加空的 assistant 消息
+            while (history.length > 0) {
+                const lastHistoryItem = history[history.length - 1];
+                if (lastHistoryItem.assistantResponseMessage) {
+                    // history 以 assistant 结尾，符合要求
+                    break;
+                }
+                // history 以 user 结尾，需要将其合并到 currentMessage
+                const removedUserMsg = history.pop();
+                if (removedUserMsg.userInputMessage) {
+                    const removedContent = removedUserMsg.userInputMessage.content || '';
+                    const removedToolResults = removedUserMsg.userInputMessage.userInputMessageContext?.toolResults || [];
+                    const removedImages = removedUserMsg.userInputMessage.images || [];
+
+                    // 将移除的 user 消息内容前置到 currentContent
+                    if (removedContent) {
+                        currentContent = removedContent + '\n\n' + currentContent;
+                    }
+                    // 合并 toolResults（前置）
+                    if (removedToolResults.length > 0) {
+                        currentToolResults = [...removedToolResults, ...currentToolResults];
+                    }
+                    // 合并 images（前置）
+                    if (removedImages.length > 0) {
+                        currentImages = [...removedImages, ...currentImages];
+                    }
+                    console.log(`[Kiro] Merged trailing userInputMessage into currentMessage (content length: ${removedContent.length}, toolResults: ${removedToolResults.length}, images: ${removedImages.length})`);
+                }
             }
         }
 
@@ -1411,24 +1428,43 @@ async initializeAuth(forceRefresh = false) {
 
         const requestUrl = model.startsWith('amazonq') ? this.amazonQUrl : this.baseUrl;
 
+        // 记录请求信息
+        console.log(`[Kiro] ========== Request Start ==========`);
+        console.log(`[Kiro] URL: ${requestUrl}`);
+        console.log(`[Kiro] Model: ${model}`);
+        console.log(`[Kiro] Request body size: ${JSON.stringify(requestData).length} bytes`);
+        console.log(`[Kiro] Messages count: ${body.messages?.length || 0}`);
+        console.log(`[Kiro] Tools count: ${body.tools?.length || 0}`);
+        console.log(`[Kiro] System prompt length: ${body.system?.length || 0} chars`);
+        console.log(`[Kiro] Retry count: ${retryCount}/${maxRetries}`);
+
+        // 记录完整请求体（可选，用于调试）
+        if (process.env.DEBUG_KIRO_REQUEST === 'true') {
+            console.log(`[Kiro] Full request body:`, JSON.stringify(requestData, null, 2));
+        }
+
         let stream = null;
         try {
-            const response = await this.axiosInstance.post(requestUrl, requestData, { 
+            const response = await this.axiosInstance.post(requestUrl, requestData, {
                 headers,
                 responseType: 'stream'
             });
 
+            console.log(`[Kiro] Response received - Status: ${response.status} ${response.statusText}`);
+            console.log(`[Kiro] Response headers:`, JSON.stringify(response.headers, null, 2));
+
             stream = response.data;
             let buffer = '';
             let lastContentEvent = null;  // 用于检测连续重复的 content 事件
+            const loggedToolUseIds = new Set();  // 用于跟踪已打印日志的工具调用 ID
 
             for await (const chunk of stream) {
                 buffer += chunk.toString();
-                
+
                 // 解析缓冲区中的事件
                 const { events, remaining } = this.parseAwsEventStreamBuffer(buffer);
                 buffer = remaining;
-                
+
                 // yield 所有事件，但过滤连续完全相同的 content 事件（Kiro API 有时会重复发送）
                 for (const event of events) {
                     if (event.type === 'content' && event.data) {
@@ -1440,8 +1476,14 @@ async initializeAuth(forceRefresh = false) {
                         lastContentEvent = event.data;
                         yield { type: 'content', content: event.data };
                     } else if (event.type === 'toolUse') {
+                        // 只在第一次遇到某个工具调用时打印日志
+                        if (!loggedToolUseIds.has(event.data.toolUseId)) {
+                            loggedToolUseIds.add(event.data.toolUseId);
+                            console.log(`[Kiro] Tool called: ${event.data.name} (ID: ${event.data.toolUseId})`);
+                        }
                         yield { type: 'toolUse', toolUse: event.data };
                     } else if (event.type === 'toolUseInput') {
+                        // 移除重复的 toolUseInput 日志，避免刷屏
                         yield { type: 'toolUseInput', input: event.data.input };
                     } else if (event.type === 'toolUseStop') {
                         yield { type: 'toolUseStop', stop: event.data.stop };
@@ -1450,26 +1492,70 @@ async initializeAuth(forceRefresh = false) {
                     }
                 }
             }
+
+            // 请求成功完成
+            console.log(`[Kiro] ========== Request Success ==========`);
+            console.log(`[Kiro] Stream completed successfully`);
+            console.log(`[Kiro] ========================================`);
+
         } catch (error) {
             // 确保出错时关闭流
             if (stream && typeof stream.destroy === 'function') {
                 stream.destroy();
             }
-            
+
             const status = error.response?.status;
             const errorCode = error.code;
             const errorMessage = error.message || '';
-            
+
+            // 记录详细的错误信息
+            console.error(`[Kiro] ========== Request Failed ==========`);
+            console.error(`[Kiro] Error status: ${status || 'N/A'}`);
+            console.error(`[Kiro] Error code: ${errorCode || 'N/A'}`);
+            console.error(`[Kiro] Error message: ${errorMessage}`);
+
+            // 记录响应头和响应体（如果有）
+            if (error.response) {
+                console.error(`[Kiro] Response status: ${error.response.status} ${error.response.statusText}`);
+                console.error(`[Kiro] Response headers:`, JSON.stringify(error.response.headers, null, 2));
+
+                // 尝试读取响应体
+                if (error.response.data) {
+                    try {
+                        let errorBody = '';
+                        if (typeof error.response.data === 'string') {
+                            errorBody = error.response.data;
+                        } else if (Buffer.isBuffer(error.response.data)) {
+                            errorBody = error.response.data.toString('utf-8');
+                        } else if (typeof error.response.data === 'object') {
+                            errorBody = JSON.stringify(error.response.data, null, 2);
+                        }
+                        console.error(`[Kiro] Response body:`, errorBody.substring(0, 1000)); // 限制长度
+                    } catch (e) {
+                        console.error(`[Kiro] Failed to parse response body:`, e.message);
+                    }
+                }
+            }
+
+            // 记录请求配置（用于复现问题）
+            if (error.config) {
+                console.error(`[Kiro] Request URL: ${error.config.url}`);
+                console.error(`[Kiro] Request method: ${error.config.method}`);
+                console.error(`[Kiro] Request body size: ${error.config.data?.length || 0} bytes`);
+            }
+
+            console.error(`[Kiro] ========================================`);
+
             // 检查是否为可重试的网络错误
             const isNetworkError = isRetryableNetworkError(error);
-            
+
             if (status === 403 && !isRetry) {
                 console.log('[Kiro] Received 403 in stream. Attempting token refresh and retrying...');
                 await this.initializeAuth(true);
                 yield* this.streamApiReal(method, model, body, true, retryCount);
                 return;
             }
-            
+
             if (status === 429 && retryCount < maxRetries) {
                 const delay = baseDelay * Math.pow(2, retryCount);
                 console.log(`[Kiro] Received 429 in stream. Retrying in ${delay}ms... (attempt ${retryCount + 1}/${maxRetries})`);
