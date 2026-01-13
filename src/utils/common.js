@@ -114,12 +114,15 @@ function _isWarmupRequest(requestBody) {
         // 检查 content 是否包含特定的 warmup 标记
         const content = firstMessage.content;
         if (typeof content === 'string') {
-            return content.includes('%%%DIFFSENTINEL%%%');
+            return content.includes('%%%DIFFSENTINEL%%%') || content === 'Warmup';
         }
 
         if (Array.isArray(content)) {
             return content.some(item =>
-                item.type === 'text' && item.text && item.text.includes('%%%DIFFSENTINEL%%%')
+                item.type === 'text' && item.text && (
+                    item.text.includes('%%%DIFFSENTINEL%%%') ||
+                    item.text === 'Warmup'
+                )
             );
         }
 
