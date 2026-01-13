@@ -1291,7 +1291,22 @@ async initializeAuth(forceRefresh = false) {
                 return this.callApi(method, model, body, isRetry, retryCount + 1);
             }
 
+            // 记录请求特征用于错误诊断
+            const reqDiag = {
+                model,
+                msgCount: body.messages?.length || 0,
+                totalChars: JSON.stringify(body.messages || []).length,
+                hasTools: !!(body.tools && body.tools.length > 0),
+                hasSystem: !!body.system,
+                hasThinking: !!body.thinking,
+                msgSummary: (body.messages || []).map((m, i) => ({
+                    idx: i,
+                    role: m.role,
+                    contentLen: typeof m.content === 'string' ? m.content.length : JSON.stringify(m.content).length
+                }))
+            };
             console.error(`[Kiro] API call failed (Status: ${status}, Code: ${errorCode}):`, error.message);
+            console.error(`[Kiro] Request diagnostics:`, JSON.stringify(reqDiag, null, 2));
             throw error;
         }
     }
@@ -1683,7 +1698,22 @@ async initializeAuth(forceRefresh = false) {
                 return;
             }
 
+            // 记录请求特征用于错误诊断
+            const reqDiag = {
+                model,
+                msgCount: body.messages?.length || 0,
+                totalChars: JSON.stringify(body.messages || []).length,
+                hasTools: !!(body.tools && body.tools.length > 0),
+                hasSystem: !!body.system,
+                hasThinking: !!body.thinking,
+                msgSummary: (body.messages || []).map((m, i) => ({
+                    idx: i,
+                    role: m.role,
+                    contentLen: typeof m.content === 'string' ? m.content.length : JSON.stringify(m.content).length
+                }))
+            };
             console.error(`[Kiro] Stream API call failed (Status: ${status}, Code: ${errorCode}):`, error.message);
+            console.error(`[Kiro] Request diagnostics:`, JSON.stringify(reqDiag, null, 2));
             throw error;
         } finally {
             // 确保流被关闭，释放资源
