@@ -1292,13 +1292,20 @@ async initializeAuth(forceRefresh = false) {
             }
 
             // 记录请求特征用于错误诊断
+            const firstMsg = body.messages?.[0];
+            const firstMsgContent = firstMsg?.content;
+            const firstMsgPreview = typeof firstMsgContent === 'string'
+                ? firstMsgContent.substring(0, 100)
+                : JSON.stringify(firstMsgContent || '').substring(0, 100);
             const reqDiag = {
                 model,
                 msgCount: body.messages?.length || 0,
                 totalChars: JSON.stringify(body.messages || []).length,
-                hasTools: !!(body.tools && body.tools.length > 0),
-                hasSystem: !!body.system,
+                toolsCount: body.tools?.length || 0,
+                toolNames: (body.tools || []).map(t => t.name || t.function?.name || 'unknown').slice(0, 10),
+                systemLen: typeof body.system === 'string' ? body.system.length : JSON.stringify(body.system || '').length,
                 hasThinking: !!body.thinking,
+                firstMsgPreview,
                 msgSummary: (body.messages || []).map((m, i) => ({
                     idx: i,
                     role: m.role,
@@ -1699,13 +1706,20 @@ async initializeAuth(forceRefresh = false) {
             }
 
             // 记录请求特征用于错误诊断
+            const firstMsg = body.messages?.[0];
+            const firstMsgContent = firstMsg?.content;
+            const firstMsgPreview = typeof firstMsgContent === 'string'
+                ? firstMsgContent.substring(0, 100)
+                : JSON.stringify(firstMsgContent || '').substring(0, 100);
             const reqDiag = {
                 model,
                 msgCount: body.messages?.length || 0,
                 totalChars: JSON.stringify(body.messages || []).length,
-                hasTools: !!(body.tools && body.tools.length > 0),
-                hasSystem: !!body.system,
+                toolsCount: body.tools?.length || 0,
+                toolNames: (body.tools || []).map(t => t.name || t.function?.name || 'unknown').slice(0, 10),
+                systemLen: typeof body.system === 'string' ? body.system.length : JSON.stringify(body.system || '').length,
                 hasThinking: !!body.thinking,
+                firstMsgPreview,
                 msgSummary: (body.messages || []).map((m, i) => ({
                     idx: i,
                     role: m.role,

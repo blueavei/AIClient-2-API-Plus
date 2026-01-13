@@ -1,74 +1,619 @@
-[14:23:43] [INFO] [Update] Not in a Git repository, will use GitHub API to check for updates
-[14:23:43] [INFO] [Update] Fetching latest version from GitHub API...
-[14:23:43] [INFO] [Update] Local version: 2.6.5@sunzy+0.6, Latest version: v2.6.7, Has update: true, Method: github_api
-[14:24:00] [INFO] 1/13/2026, 6:24:00 AM
-[14:24:00] [INFO] [Server] Received request: POST http://175.24.232.84:5000/v1/messages
-[14:24:00] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
-[14:24:00] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 9ac9ee91-0cd0-4765-be50-81e1fa2c3929 (t)
-[14:24:00] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ac9ee91-0cd0-4765-be50-81e1fa2c3929 (t)
-[14:24:00] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: false
-[14:24:00] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ac9ee91-0cd0-4765-be50-81e1fa2c3929 (t)
-[14:24:00] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
-[14:24:00] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
-[14:24:00] [INFO] [Kiro] Expiry date: 1768288627872, Current time: 1768285440666, 15 minutes from now: 1768286340666
-[14:24:00] [INFO] [Kiro] Calling generateContent with model: claude-sonnet-4-5-20250929
-[14:24:00] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
-[14:24:07] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (9ac9ee91-0cd0-4765-be50-81e1fa2c3929, t) after successful unary request
-[14:24:14] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (9ac9ee91-0cd0-4765-be50-81e1fa2c3929, t) after successful unary request
-[14:24:17] [INFO] 1/13/2026, 6:24:17 AM
-[14:24:17] [INFO] [Server] Received request: POST http://175.24.232.84:5000/v1/messages
-[14:24:17] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
-[14:24:17] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 81b729a5-7ced-44f3-828a-feb4fb76666c (g)
-[14:24:17] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 81b729a5-7ced-44f3-828a-feb4fb76666c (g)
-[14:24:17] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: false
-[14:24:17] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 81b729a5-7ced-44f3-828a-feb4fb76666c (g)
-[14:24:17] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
-[14:24:17] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
-[14:24:17] [INFO] [Kiro] Expiry date: 1768288652977, Current time: 1768285457472, 15 minutes from now: 1768286357472
-[14:24:17] [INFO] [Kiro] Calling generateContent with model: claude-sonnet-4-5-20250929
-[14:24:17] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
-[14:24:25] [INFO] 1/13/2026, 6:24:25 AM
-[14:24:25] [INFO] [Server] Received request: POST http://175.24.232.84:5000/v1/messages
-[14:24:25] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
-[14:24:25] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 81b729a5-7ced-44f3-828a-feb4fb76666c (g)
-[14:24:25] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 81b729a5-7ced-44f3-828a-feb4fb76666c (g)
-[14:24:25] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: false
-[14:24:25] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 81b729a5-7ced-44f3-828a-feb4fb76666c (g)
-[14:24:25] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
-[14:24:25] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
-[14:24:25] [INFO] [Kiro] Expiry date: 1768288652977, Current time: 1768285465431, 15 minutes from now: 1768286365431
-[14:24:25] [INFO] [Kiro] Calling generateContent with model: claude-sonnet-4-5-20250929
-[14:24:25] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
-[14:24:44] [INFO] 1/13/2026, 6:24:44 AM
-[14:24:44] [INFO] [Server] Received request: POST http://175.24.232.84:5000/v1/messages?beta=true
-[14:24:44] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
-[14:24:44] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 81b729a5-7ced-44f3-828a-feb4fb76666c (g)
-[14:24:44] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 81b729a5-7ced-44f3-828a-feb4fb76666c (g)
-[14:24:44] [INFO] [Content Generation] Model: claude-opus-4-5-20251101, Stream: false
-[14:24:44] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 81b729a5-7ced-44f3-828a-feb4fb76666c (g)
-[14:24:44] [INFO] [Content Generation] Re-selected service adapter based on model: claude-opus-4-5-20251101
-[14:24:44] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
-[14:24:44] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
-[14:24:44] [INFO] [Kiro] Expiry date: 1768288652977, Current time: 1768285484841, 15 minutes from now: 1768286384841
-[14:24:44] [INFO] [Kiro] Calling generateContent with model: claude-opus-4-5-20251101
-[14:24:44] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
-[14:24:45] [INFO] [Kiro] Received 500 server error. Retrying in 1000ms... (attempt 1/3)
-[14:24:46] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (81b729a5-7ced-44f3-828a-feb4fb76666c, g) after successful unary request
-[14:24:46] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
-[14:24:47] [INFO] [Kiro] Received 500 server error. Retrying in 2000ms... (attempt 2/3)
-[14:24:49] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
-[14:24:50] [INFO] [Kiro] Received 500 server error. Retrying in 4000ms... (attempt 3/3)
-[14:24:54] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
-[14:24:55] [ERROR] [Kiro] API call failed (Status: 500, Code: ERR_BAD_RESPONSE): Request failed with status code 500
-[14:24:55] [ERROR] [Server] Error during unary processing: AxiosError: Request failed with status code 500 at settle (file:///app/node_modules/axios/lib/core/settle.js:19:12) at IncomingMessage.handleStreamEnd (file:///app/node_modules/axios/lib/adapters/http.js:599:11) at IncomingMessage.emit (node:events:536:35) at endReadableNT (node:internal/streams/readable:1698:12) at process.processTicksAndRejections (node:internal/process/task_queues:82:21) at Axios.request (file:///app/node_modules/axios/lib/core/Axios.js:45:41) at process.processTicksAndRejections (node:internal/process/task_queues:95:5) at async KiroApiService.callApi (file:///app/src/providers/claude/claude-kiro.js:1248:30) at async KiroApiService.generateContent (file:///app/src/providers/claude/claude-kiro.js:1356:26) at async handleUnaryRequest (file:///app/src/utils/common.js:458:32) at async handleContentGenerationRequest (file:///app/src/utils/common.js:642:9) at async handleAPIRequests (file:///app/src/services/api-manager.js:52:13) at async Server.requestHandler (file:///app/src/handlers/request-handler.js:231:32)
-[14:24:55] [INFO] [Provider Pool] Marking claude-kiro-oauth as unhealthy due to stream error
-[14:24:57] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (81b729a5-7ced-44f3-828a-feb4fb76666c, g) after successful unary request
-[14:25:15] [INFO] 1/13/2026, 6:25:15 AM
-[14:25:15] [INFO] [Server] Received request: POST http://175.24.232.84:5000/v1/messages?beta=true
-[14:25:15] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
-[14:25:15] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: ba535a43-a6fc-4543-a178-9a38290e1c92 (d)
-[14:25:15] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ba535a43-a6fc-4543-a178-9a38290e1c92 (d)
-[14:25:15] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
-[14:25:15] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ba535a43-a6fc-4543-a178-9a38290e1c92 (d)
-[14:25:15] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
-[14:25:15] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:52:13] [INFO] 1/13/2026, 7:52:13 AM
+[15:52:13] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages
+[15:52:13] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:52:13] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:52:13] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:52:13] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: false
+[15:52:13] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:52:13] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:52:13] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:52:13] [INFO] [Kiro] Expiry date: 1768294035842, Current time: 1768290733434, 15 minutes from now: 1768291633434
+[15:52:13] [INFO] [Kiro] Calling generateContent with model: claude-sonnet-4-5-20250929
+[15:52:16] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (9ed4f457-f6e7-4641-9641-b91f97add93f, 1) after successful unary request
+[15:52:30] [INFO] 1/13/2026, 7:52:30 AM
+[15:52:30] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages
+[15:52:30] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:52:30] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:52:30] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:52:30] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: false
+[15:52:30] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:52:30] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:52:30] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:52:30] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:52:30] [INFO] [Kiro] Expiry date: 1768294044042, Current time: 1768290750720, 15 minutes from now: 1768291650720
+[15:52:30] [INFO] [Kiro] Calling generateContent with model: claude-sonnet-4-5-20250929
+[15:52:30] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:53:01] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (ea10bf15-b455-4ebe-a03f-af8e0bfe518e, t) after successful unary request
+[15:53:14] [INFO] 1/13/2026, 7:53:14 AM
+[15:53:14] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:53:14] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:53:14] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:53:14] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:53:14] [INFO] [Content Generation] Model: claude-opus-4-5-20251101, Stream: false
+[15:53:14] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:53:14] [INFO] [Content Generation] Re-selected service adapter based on model: claude-opus-4-5-20251101
+[15:53:14] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:53:14] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:53:14] [INFO] [Kiro] Expiry date: 1768294054514, Current time: 1768290794421, 15 minutes from now: 1768291694421
+[15:53:14] [INFO] [Kiro] Calling generateContent with model: claude-opus-4-5-20251101
+[15:53:14] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:53:15] [INFO] [Kiro] Received 500 server error. Retrying in 1000ms... (attempt 1/3)
+[15:53:16] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:53:18] [INFO] [Kiro] Received 500 server error. Retrying in 2000ms... (attempt 2/3)
+[15:53:20] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:53:21] [INFO] [Kiro] Received 500 server error. Retrying in 4000ms... (attempt 3/3)
+[15:53:25] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:53:26] [ERROR] [Kiro] API call failed (Status: 500, Code: ERR_BAD_RESPONSE): Request failed with status code 500
+[15:53:26] [ERROR] [Kiro] Request diagnostics: { "model": "claude-opus-4-5-20251101", "msgCount": 1, "totalChars": 98, "hasTools": true, "hasSystem": true, "hasThinking": false, "msgSummary": [ { "idx": 0, "role": "user", "contentLen": 70 } ] }
+[15:53:26] [ERROR] [Server] Error during unary processing: AxiosError: Request failed with status code 500 at settle (file:///app/node_modules/axios/lib/core/settle.js:19:12) at IncomingMessage.handleStreamEnd (file:///app/node_modules/axios/lib/adapters/http.js:599:11) at IncomingMessage.emit (node:events:536:35) at endReadableNT (node:internal/streams/readable:1698:12) at process.processTicksAndRejections (node:internal/process/task_queues:82:21) at Axios.request (file:///app/node_modules/axios/lib/core/Axios.js:45:41) at process.processTicksAndRejections (node:internal/process/task_queues:95:5) at async KiroApiService.callApi (file:///app/src/providers/claude/claude-kiro.js:1248:30) at async KiroApiService.generateContent (file:///app/src/providers/claude/claude-kiro.js:1371:26) at async handleUnaryRequest (file:///app/src/utils/common.js:458:32) at async handleContentGenerationRequest (file:///app/src/utils/common.js:642:9) at async handleAPIRequests (file:///app/src/services/api-manager.js:52:13) at async Server.requestHandler (file:///app/src/handlers/request-handler.js:231:32)
+[15:53:26] [INFO] [Provider Pool] Marking claude-kiro-oauth as unhealthy due to stream error
+[15:53:52] [INFO] 1/13/2026, 7:53:52 AM
+[15:53:52] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:53:52] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:53:52] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:53:52] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:53:52] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
+[15:53:52] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:53:52] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:53:52] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:53:52] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:53:52] [INFO] [Kiro] Expiry date: 1768294035842, Current time: 1768290832588, 15 minutes from now: 1768291732588
+[15:53:52] [INFO] [Kiro] Calling generateContentStream with model: claude-sonnet-4-5-20250929 (real streaming)
+[15:53:53] [INFO] [Kiro] Ignoring tool: WebSearch
+[15:53:53] [INFO] [Kiro] Tools compressed: 71729 -> 18632 bytes (29 tools)
+[15:53:53] [INFO] [Kiro] ========== Request Start ==========
+[15:53:53] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:53:53] [INFO] [Kiro] Model: claude-sonnet-4-5-20250929
+[15:53:53] [INFO] [Kiro] Request body size: 34181 bytes
+[15:53:53] [INFO] [Kiro] Messages count: 7
+[15:53:53] [INFO] [Kiro] Tools count: 30
+[15:53:53] [INFO] [Kiro] System prompt length: 2 chars
+[15:53:53] [INFO] [Kiro] Retry count: 0/3
+[15:53:56] [INFO] [Kiro] Response received - Status: 200 OK
+[15:53:56] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 07:53:56 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "9e18f602-522e-42df-8b79-19c28c659d62", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[15:54:02] [INFO] 1/13/2026, 7:54:02 AM
+[15:54:02] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:54:02] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:54:02] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:54:02] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:54:03] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
+[15:54:03] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:54:03] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:54:03] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:54:03] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:54:03] [INFO] [Kiro] Expiry date: 1768294035842, Current time: 1768290843203, 15 minutes from now: 1768291743203
+[15:54:03] [INFO] [Kiro] Calling generateContentStream with model: claude-sonnet-4-5-20250929 (real streaming)
+[15:54:25] [INFO] [Kiro] Ignoring tool: WebSearch
+[15:54:25] [INFO] [Kiro] Tools compressed: 56583 -> 11869 bytes (16 tools)
+[15:54:25] [INFO] [Kiro] ========== Request Start ==========
+[15:54:25] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:54:25] [INFO] [Kiro] Model: claude-sonnet-4-5-20250929
+[15:54:25] [INFO] [Kiro] Request body size: 499395 bytes
+[15:54:25] [INFO] [Kiro] Messages count: 233
+[15:54:25] [INFO] [Kiro] Tools count: 17
+[15:54:25] [INFO] [Kiro] System prompt length: 2 chars
+[15:54:25] [INFO] [Kiro] Retry count: 0/3
+[15:54:25] [INFO] [Kiro] ========== Request Success ==========
+[15:54:25] [INFO] [Kiro] Stream completed successfully
+[15:54:25] [INFO] [Kiro] ========================================
+[15:54:25] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=8892, output=472, input=8420
+[15:54:25] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (9ed4f457-f6e7-4641-9641-b91f97add93f, 1) after successful stream request
+[15:54:37] [INFO] [Kiro] Response received - Status: 200 OK
+[15:54:37] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 07:54:37 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "cf0e209b-550f-4197-a531-5e9508cc7a4d", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[15:54:37] [INFO] [Kiro] Tool called: Bash (ID: tooluse_a2GX9ISYMfxkQ1dXoPwiwJ)
+[15:54:38] [INFO] [Kiro] ========== Request Success ==========
+[15:54:38] [INFO] [Kiro] Stream completed successfully
+[15:54:38] [INFO] [Kiro] ========================================
+[15:54:38] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=144721, output=112, input=144609
+[15:54:38] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (9ed4f457-f6e7-4641-9641-b91f97add93f, 1) after successful stream request
+[15:54:44] [INFO] 1/13/2026, 7:54:44 AM
+[15:54:44] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:54:44] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:54:44] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:54:44] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:54:44] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
+[15:54:44] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:54:44] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:54:44] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:54:44] [INFO] [Kiro] Expiry date: 1768294044042, Current time: 1768290884249, 15 minutes from now: 1768291784249
+[15:54:44] [INFO] [Kiro] Calling generateContentStream with model: claude-sonnet-4-5-20250929 (real streaming)
+[15:55:09] [INFO] [Kiro] Ignoring tool: WebSearch
+[15:55:09] [INFO] [Kiro] Tools compressed: 56583 -> 11869 bytes (16 tools)
+[15:55:09] [INFO] [Kiro] ========== Request Start ==========
+[15:55:09] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:55:09] [INFO] [Kiro] Model: claude-sonnet-4-5-20250929
+[15:55:09] [INFO] [Kiro] Request body size: 500908 bytes
+[15:55:09] [INFO] [Kiro] Messages count: 235
+[15:55:09] [INFO] [Kiro] Tools count: 17
+[15:55:09] [INFO] [Kiro] System prompt length: 2 chars
+[15:55:09] [INFO] [Kiro] Retry count: 0/3
+[15:55:11] [INFO] 1/13/2026, 7:55:11 AM
+[15:55:11] [INFO] [Server] Received request: GET http://111.228.51.118:5000/.well-known/security.txt
+[15:55:11] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: .well-known
+[15:55:11] [INFO] [Default Auth] Unauthorized request. Headers: Authorization=N/A, x-api-key=N/A, x-goog-api-key=N/A
+[15:55:19] [INFO] [Kiro] Response received - Status: 200 OK
+[15:55:19] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 07:55:19 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "9b736a82-64ae-422c-94de-a67b4586144d", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[15:55:24] [INFO] [Kiro] Tool called: Write (ID: tooluse_Fo9kqvakLwvDqds0qtDSzS)
+[15:55:26] [INFO] [API Potluck] Running scheduled health sync from pool...
+[15:55:26] [INFO] [API Potluck] Health sync complete: 0/0 healthy
+[15:55:42] [INFO] [Kiro] ========== Request Success ==========
+[15:55:42] [INFO] [Kiro] Stream completed successfully
+[15:55:42] [INFO] [Kiro] ========================================
+[15:55:42] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=146648, output=3598, input=143050
+[15:55:42] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (ea10bf15-b455-4ebe-a03f-af8e0bfe518e, t) after successful stream request
+[15:55:45] [INFO] 1/13/2026, 7:55:45 AM
+[15:55:45] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:55:45] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:55:45] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:55:45] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:55:45] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
+[15:55:45] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:55:45] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:55:45] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:55:45] [INFO] [Kiro] Expiry date: 1768294054514, Current time: 1768290945548, 15 minutes from now: 1768291845548
+[15:55:45] [INFO] [Kiro] Calling generateContentStream with model: claude-sonnet-4-5-20250929 (real streaming)
+[15:56:10] [INFO] [Kiro] Ignoring tool: WebSearch
+[15:56:10] [INFO] [Kiro] Tools compressed: 56583 -> 11869 bytes (16 tools)
+[15:56:10] [INFO] [Kiro] ========== Request Start ==========
+[15:56:10] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:56:10] [INFO] [Kiro] Model: claude-sonnet-4-5-20250929
+[15:56:10] [INFO] [Kiro] Request body size: 504821 bytes
+[15:56:10] [INFO] [Kiro] Messages count: 237
+[15:56:10] [INFO] [Kiro] Tools count: 17
+[15:56:10] [INFO] [Kiro] System prompt length: 2 chars
+[15:56:10] [INFO] [Kiro] Retry count: 0/3
+[15:56:19] [INFO] [Kiro] Response received - Status: 200 OK
+[15:56:19] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 07:56:19 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "5978693c-fd7e-4479-86d6-62a59d51c210", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[15:56:19] [INFO] [Kiro] Tool called: Bash (ID: tooluse_fqNSMx3r3n9nmRC8jRR48R)
+[15:56:20] [INFO] [Kiro] ========== Request Success ==========
+[15:56:20] [INFO] [Kiro] Stream completed successfully
+[15:56:20] [INFO] [Kiro] ========================================
+[15:56:20] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=146760, output=128, input=146632
+[15:56:20] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (66016935-4f61-4a5a-b8b9-a5bb72dba709, n) after successful stream request
+[15:56:27] [INFO] 1/13/2026, 7:56:27 AM
+[15:56:27] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:56:27] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:56:27] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:56:27] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:56:27] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
+[15:56:27] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:56:27] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:56:27] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:56:27] [INFO] [Kiro] Expiry date: 1768294035842, Current time: 1768290987934, 15 minutes from now: 1768291887934
+[15:56:27] [INFO] [Kiro] Calling generateContentStream with model: claude-sonnet-4-5-20250929 (real streaming)
+[15:56:53] [INFO] [Kiro] Ignoring tool: WebSearch
+[15:56:53] [INFO] [Kiro] Tools compressed: 56583 -> 11869 bytes (16 tools)
+[15:56:53] [INFO] [Kiro] ========== Request Start ==========
+[15:56:53] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:56:53] [INFO] [Kiro] Model: claude-sonnet-4-5-20250929
+[15:56:53] [INFO] [Kiro] Request body size: 506879 bytes
+[15:56:53] [INFO] [Kiro] Messages count: 239
+[15:56:53] [INFO] [Kiro] Tools count: 17
+[15:56:53] [INFO] [Kiro] System prompt length: 2 chars
+[15:56:53] [INFO] [Kiro] Retry count: 0/3
+[15:56:53] [INFO] 1/13/2026, 7:56:53 AM
+[15:56:53] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:56:53] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:56:53] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:56:53] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:56:53] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
+[15:56:53] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:56:53] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:56:53] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:56:53] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:56:53] [INFO] [Kiro] Expiry date: 1768294035842, Current time: 1768291013482, 15 minutes from now: 1768291913482
+[15:56:53] [INFO] [Kiro] Calling generateContentStream with model: claude-sonnet-4-5-20250929 (real streaming)
+[15:57:05] [INFO] [Kiro] Ignoring tool: WebSearch
+[15:57:05] [INFO] [Kiro] Tools compressed: 56579 -> 11869 bytes (16 tools)
+[15:57:05] [INFO] [Kiro] ========== Request Start ==========
+[15:57:05] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:57:05] [INFO] [Kiro] Model: claude-sonnet-4-5-20250929
+[15:57:05] [INFO] [Kiro] Request body size: 257734 bytes
+[15:57:05] [INFO] [Kiro] Messages count: 117
+[15:57:05] [INFO] [Kiro] Tools count: 17
+[15:57:05] [INFO] [Kiro] System prompt length: 2 chars
+[15:57:05] [INFO] [Kiro] Retry count: 0/3
+[15:57:05] [INFO] 1/13/2026, 7:57:05 AM
+[15:57:05] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages
+[15:57:05] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:57:05] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:57:05] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:57:05] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: false
+[15:57:05] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[15:57:05] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:57:05] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:57:05] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:57:05] [INFO] [Kiro] Expiry date: 1768294035842, Current time: 1768291025558, 15 minutes from now: 1768291925558
+[15:57:05] [INFO] [Kiro] Calling generateContent with model: claude-sonnet-4-5-20250929
+[15:57:05] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:57:14] [INFO] [Kiro] Response received - Status: 200 OK
+[15:57:14] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 07:57:14 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "ce2cc27a-ae77-4403-94fa-23706af76990", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[15:57:14] [INFO] [Kiro] Tool called: Bash (ID: tooluse_hwUr8qKy8irrjm6dvYWq7S)
+[15:57:19] [INFO] [Kiro] Response received - Status: 200 OK
+[15:57:19] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 07:57:19 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "3e5d2780-1097-4b4d-b626-efb0290259cd", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[15:57:40] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (9ed4f457-f6e7-4641-9641-b91f97add93f, 1) after successful unary request
+[15:57:50] [INFO] [Kiro] Tool called: Write (ID: tooluse_UsZMTJsh0pcQJ4RIwKM2Nt)
+[15:57:52] [INFO] [Kiro] ========== Request Success ==========
+[15:57:52] [INFO] [Kiro] Stream completed successfully
+[15:57:52] [INFO] [Kiro] ========================================
+[15:57:52] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=149802, output=5756, input=144046
+[15:57:52] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (9ed4f457-f6e7-4641-9641-b91f97add93f, 1) after successful stream request
+[15:57:56] [INFO] 1/13/2026, 7:57:56 AM
+[15:57:56] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:57:56] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:57:56] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:57:56] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:57:56] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
+[15:57:56] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:57:56] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:57:56] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:57:56] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:57:56] [INFO] [Kiro] Expiry date: 1768294044042, Current time: 1768291076351, 15 minutes from now: 1768291976351
+[15:57:56] [INFO] [Kiro] Calling generateContentStream with model: claude-sonnet-4-5-20250929 (real streaming)
+[15:58:22] [INFO] [Kiro] Ignoring tool: WebSearch
+[15:58:22] [INFO] [Kiro] Tools compressed: 56583 -> 11869 bytes (16 tools)
+[15:58:22] [INFO] [Kiro] ========== Request Start ==========
+[15:58:22] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:58:22] [INFO] [Kiro] Model: claude-sonnet-4-5-20250929
+[15:58:22] [INFO] [Kiro] Request body size: 513300 bytes
+[15:58:22] [INFO] [Kiro] Messages count: 241
+[15:58:22] [INFO] [Kiro] Tools count: 17
+[15:58:22] [INFO] [Kiro] System prompt length: 2 chars
+[15:58:22] [INFO] [Kiro] Retry count: 0/3
+[15:58:22] [INFO] 1/13/2026, 7:58:22 AM
+[15:58:22] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:58:22] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:58:22] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:58:22] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:58:22] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
+[15:58:22] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:58:22] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:58:22] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:58:22] [INFO] 1/13/2026, 7:58:22 AM
+[15:58:22] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages
+[15:58:22] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:58:22] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:58:22] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:58:22] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: false
+[15:58:22] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:58:22] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:58:22] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:58:22] [INFO] 1/13/2026, 7:58:22 AM
+[15:58:22] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:58:22] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:58:22] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:58:22] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:58:22] [INFO] [Content Generation] Model: claude-opus-4-5-20251101, Stream: false
+[15:58:22] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[15:58:22] [INFO] [Content Generation] Re-selected service adapter based on model: claude-opus-4-5-20251101
+[15:58:22] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:58:22] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:58:22] [INFO] [Kiro] Expiry date: 1768294044042, Current time: 1768291102185, 15 minutes from now: 1768292002185
+[15:58:22] [INFO] [Kiro] Calling generateContentStream with model: claude-sonnet-4-5-20250929 (real streaming)
+[15:58:22] [INFO] [Kiro] Removing last assistant with "{" message from processedMessages
+[15:58:22] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:58:22] [INFO] [Kiro] ========== Request Start ==========
+[15:58:22] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:58:22] [INFO] [Kiro] Model: claude-sonnet-4-5-20250929
+[15:58:22] [INFO] [Kiro] Request body size: 10450 bytes
+[15:58:22] [INFO] [Kiro] Messages count: 1
+[15:58:22] [INFO] [Kiro] Tools count: 0
+[15:58:22] [INFO] [Kiro] System prompt length: 2 chars
+[15:58:22] [INFO] [Kiro] Retry count: 0/3
+[15:58:22] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:58:22] [INFO] [Kiro] Expiry date: 1768294044042, Current time: 1768291102462, 15 minutes from now: 1768292002462
+[15:58:22] [INFO] [Kiro] Calling generateContent with model: claude-sonnet-4-5-20250929
+[15:58:22] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:58:22] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:58:22] [INFO] [Kiro] Expiry date: 1768294044042, Current time: 1768291102675, 15 minutes from now: 1768292002675
+[15:58:22] [INFO] [Kiro] Calling generateContent with model: claude-opus-4-5-20251101
+[15:58:22] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:58:23] [INFO] [Kiro] Received 500 server error. Retrying in 1000ms... (attempt 1/3)
+[15:58:24] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:58:25] [INFO] [Kiro] Received 500 server error. Retrying in 2000ms... (attempt 2/3)
+[15:58:26] [INFO] [Kiro] Response received - Status: 200 OK
+[15:58:26] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 07:58:26 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "9c5b6f48-024a-4c8b-b2ba-f8ff4fab035f", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[15:58:26] [INFO] [Kiro] ========== Request Success ==========
+[15:58:26] [INFO] [Kiro] Stream completed successfully
+[15:58:26] [INFO] [Kiro] ========================================
+[15:58:26] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=4665, output=27, input=4638
+[15:58:26] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (ea10bf15-b455-4ebe-a03f-af8e0bfe518e, t) after successful stream request
+[15:58:27] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:58:28] [INFO] [Kiro] ========== Request Success ==========
+[15:58:28] [INFO] [Kiro] Stream completed successfully
+[15:58:28] [INFO] [Kiro] ========================================
+[15:58:28] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=107654, output=14069, input=93585
+[15:58:28] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (9ed4f457-f6e7-4641-9641-b91f97add93f, 1) after successful stream request
+[15:58:28] [INFO] [Kiro] Received 500 server error. Retrying in 4000ms... (attempt 3/3)
+[15:58:30] [INFO] [Kiro] Response received - Status: 200 OK
+[15:58:30] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 07:58:30 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "a8b6869c-8a7a-4c02-9667-ae4259fa0794", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[15:58:30] [INFO] [Kiro] Tool called: Bash (ID: tooluse_d3Cja1a2wMyixg2T3JsNEQ)
+[15:58:31] [INFO] [Kiro] ========== Request Success ==========
+[15:58:31] [INFO] [Kiro] Stream completed successfully
+[15:58:31] [INFO] [Kiro] ========================================
+[15:58:31] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=149912, output=113, input=149799
+[15:58:31] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (ea10bf15-b455-4ebe-a03f-af8e0bfe518e, t) after successful stream request
+[15:58:32] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:58:33] [ERROR] [Kiro] API call failed (Status: 500, Code: ERR_BAD_RESPONSE): Request failed with status code 500
+[15:58:33] [ERROR] [Kiro] Request diagnostics: { "model": "claude-opus-4-5-20251101", "msgCount": 1, "totalChars": 98, "hasTools": true, "hasSystem": true, "hasThinking": false, "msgSummary": [ { "idx": 0, "role": "user", "contentLen": 70 } ] }
+[15:58:33] [ERROR] [Server] Error during unary processing: AxiosError: Request failed with status code 500 at settle (file:///app/node_modules/axios/lib/core/settle.js:19:12) at IncomingMessage.handleStreamEnd (file:///app/node_modules/axios/lib/adapters/http.js:599:11) at IncomingMessage.emit (node:events:536:35) at endReadableNT (node:internal/streams/readable:1698:12) at process.processTicksAndRejections (node:internal/process/task_queues:82:21) at Axios.request (file:///app/node_modules/axios/lib/core/Axios.js:45:41) at process.processTicksAndRejections (node:internal/process/task_queues:95:5) at async KiroApiService.callApi (file:///app/src/providers/claude/claude-kiro.js:1248:30) at async KiroApiService.generateContent (file:///app/src/providers/claude/claude-kiro.js:1371:26) at async handleUnaryRequest (file:///app/src/utils/common.js:458:32) at async handleContentGenerationRequest (file:///app/src/utils/common.js:642:9) at async handleAPIRequests (file:///app/src/services/api-manager.js:52:13) at async Server.requestHandler (file:///app/src/handlers/request-handler.js:231:32)
+[15:58:33] [INFO] [Provider Pool] Marking claude-kiro-oauth as unhealthy due to stream error
+[15:58:41] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (ea10bf15-b455-4ebe-a03f-af8e0bfe518e, t) after successful unary request
+[15:58:51] [INFO] 1/13/2026, 7:58:51 AM
+[15:58:51] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:58:51] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:58:51] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:58:51] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:58:51] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
+[15:58:51] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:58:51] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:58:51] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:58:51] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:58:51] [INFO] [Kiro] Expiry date: 1768294054514, Current time: 1768291131733, 15 minutes from now: 1768292031733
+[15:58:51] [INFO] [Kiro] Calling generateContentStream with model: claude-sonnet-4-5-20250929 (real streaming)
+[15:59:17] [INFO] [Kiro] Ignoring tool: WebSearch
+[15:59:17] [INFO] [Kiro] Tools compressed: 56583 -> 11869 bytes (16 tools)
+[15:59:17] [INFO] [Kiro] ========== Request Start ==========
+[15:59:17] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:59:17] [INFO] [Kiro] Model: claude-sonnet-4-5-20250929
+[15:59:17] [INFO] [Kiro] Request body size: 519841 bytes
+[15:59:17] [INFO] [Kiro] Messages count: 243
+[15:59:17] [INFO] [Kiro] Tools count: 17
+[15:59:17] [INFO] [Kiro] System prompt length: 2 chars
+[15:59:17] [INFO] [Kiro] Retry count: 0/3
+[15:59:17] [INFO] 1/13/2026, 7:59:17 AM
+[15:59:17] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages
+[15:59:17] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:59:17] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:59:17] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:59:17] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: false
+[15:59:17] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:59:17] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[15:59:17] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:59:17] [INFO] 1/13/2026, 7:59:17 AM
+[15:59:17] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[15:59:17] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[15:59:17] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:59:17] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:59:17] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:59:17] [INFO] [Kiro] Expiry date: 1768294054514, Current time: 1768291157565, 15 minutes from now: 1768292057565
+[15:59:17] [INFO] [Kiro] Calling generateContent with model: claude-sonnet-4-5-20250929
+[15:59:17] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[15:59:17] [INFO] [Content Generation] Model: claude-opus-4-5-20251101, Stream: true
+[15:59:17] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[15:59:17] [INFO] [Content Generation] Re-selected service adapter based on model: claude-opus-4-5-20251101
+[15:59:17] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[15:59:17] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[15:59:17] [INFO] [Kiro] Expiry date: 1768294054514, Current time: 1768291157793, 15 minutes from now: 1768292057793
+[15:59:17] [INFO] [Kiro] Calling generateContentStream with model: claude-opus-4-5-20251101 (real streaming)
+[15:59:26] [INFO] [Kiro] Ignoring tool: WebSearch
+[15:59:26] [INFO] [Kiro] Tools compressed: 60657 -> 13442 bytes (19 tools)
+[15:59:26] [INFO] [Kiro] ========== Request Start ==========
+[15:59:26] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:59:26] [INFO] [Kiro] Model: claude-opus-4-5-20251101
+[15:59:26] [INFO] [Kiro] Request body size: 286331 bytes
+[15:59:26] [INFO] [Kiro] Messages count: 65
+[15:59:26] [INFO] [Kiro] Tools count: 20
+[15:59:26] [INFO] [Kiro] System prompt length: 2 chars
+[15:59:26] [INFO] [Kiro] Retry count: 0/3
+[15:59:29] [ERROR] [Kiro] ========== Request Failed ==========
+[15:59:29] [ERROR] [Kiro] Error status: 429
+[15:59:29] [ERROR] [Kiro] Error code: ERR_BAD_REQUEST
+[15:59:29] [ERROR] [Kiro] Error message: Request failed with status code 429
+[15:59:29] [ERROR] [Kiro] Response status: 429 Too Many Requests
+[15:59:29] [ERROR] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 07:59:28 GMT", "content-type": "application/json", "content-length": "110", "connection": "close", "x-amzn-requestid": "711cb075-68bc-46a2-87ed-756d5c5def48", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "x-amzn-errortype": "ThrottlingException:http://internal.amazon.com/coral/com.amazon.aws.codewhisperer/", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[15:59:29] [ERROR] [Kiro] Failed to parse response body: Converting circular structure to JSON --> starting at object with constructor 'TLSSocket' | property '_httpMessage' -> object with constructor 'ClientRequest' --- property 'socket' closes the circle
+[15:59:29] [ERROR] [Kiro] Request URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:59:29] [ERROR] [Kiro] Request method: post
+[15:59:29] [ERROR] [Kiro] Request body size: 286331 bytes
+[15:59:29] [ERROR] [Kiro] ========================================
+[15:59:29] [INFO] [Kiro] Received 429 in stream. Retrying in 1000ms... (attempt 1/3)
+[15:59:30] [INFO] [Kiro] Ignoring tool: WebSearch
+[15:59:30] [INFO] [Kiro] Tools compressed: 60657 -> 13442 bytes (19 tools)
+[15:59:30] [INFO] [Kiro] ========== Request Start ==========
+[15:59:30] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[15:59:30] [INFO] [Kiro] Model: claude-opus-4-5-20251101
+[15:59:30] [INFO] [Kiro] Request body size: 286331 bytes
+[15:59:30] [INFO] [Kiro] Messages count: 65
+[15:59:30] [INFO] [Kiro] Tools count: 20
+[15:59:30] [INFO] [Kiro] System prompt length: 2 chars
+[15:59:30] [INFO] [Kiro] Retry count: 1/3
+[15:59:33] [INFO] [Kiro] Response received - Status: 200 OK
+[15:59:33] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 07:59:33 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "5c243789-f555-4331-bc2b-2302d285cc01", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[15:59:40] [INFO] [Kiro] Tool called: Read (ID: tooluse_f9dfnDSPqXXIKuWlIDVOoe)
+[15:59:40] [INFO] [Kiro] ========== Request Success ==========
+[15:59:40] [INFO] [Kiro] Stream completed successfully
+[15:59:40] [INFO] [Kiro] ========================================
+[15:59:40] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=153657, output=352, input=153305
+[15:59:40] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (66016935-4f61-4a5a-b8b9-a5bb72dba709, n) after successful stream request
+[15:59:41] [INFO] [Kiro] Response received - Status: 200 OK
+[15:59:41] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 07:59:41 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "87159473-9b1a-47ee-860b-84f03da4c4b0", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[15:59:41] [INFO] [Kiro] Tool called: Read (ID: tooluse_uxh35Y92v6NjMPYiigRS7I)
+[15:59:41] [INFO] [Kiro] ========== Request Success ==========
+[15:59:41] [INFO] [Kiro] Stream completed successfully
+[15:59:41] [INFO] [Kiro] ========================================
+[15:59:42] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=75682, output=102, input=75580
+[15:59:42] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (66016935-4f61-4a5a-b8b9-a5bb72dba709, n) after successful stream request
+[16:00:01] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (66016935-4f61-4a5a-b8b9-a5bb72dba709, n) after successful unary request
+[16:00:04] [INFO] 1/13/2026, 8:00:04 AM
+[16:00:04] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[16:00:04] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[16:00:04] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:00:04] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:00:04] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
+[16:00:04] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:00:04] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[16:00:04] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[16:00:04] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[16:00:04] [INFO] [Kiro] Expiry date: 1768294035842, Current time: 1768291204288, 15 minutes from now: 1768292104288
+[16:00:04] [INFO] [Kiro] Calling generateContentStream with model: claude-sonnet-4-5-20250929 (real streaming)
+[16:00:10] [INFO] [Kiro] Ignoring tool: WebSearch
+[16:00:10] [INFO] [Kiro] Tools compressed: 56378 -> 11869 bytes (16 tools)
+[16:00:10] [INFO] [Kiro] ========== Request Start ==========
+[16:00:10] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[16:00:10] [INFO] [Kiro] Model: claude-sonnet-4-5-20250929
+[16:00:10] [INFO] [Kiro] Request body size: 214008 bytes
+[16:00:10] [INFO] [Kiro] Messages count: 65
+[16:00:10] [INFO] [Kiro] Tools count: 17
+[16:00:10] [INFO] [Kiro] System prompt length: 2 chars
+[16:00:10] [INFO] [Kiro] Retry count: 0/3
+[16:00:10] [INFO] 1/13/2026, 8:00:10 AM
+[16:00:10] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[16:00:10] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[16:00:10] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:00:10] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:00:11] [INFO] [Content Generation] Model: claude-opus-4-5-20251101, Stream: true
+[16:00:11] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:00:11] [INFO] [Content Generation] Re-selected service adapter based on model: claude-opus-4-5-20251101
+[16:00:11] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[16:00:11] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[16:00:11] [INFO] [Kiro] Expiry date: 1768294035842, Current time: 1768291211004, 15 minutes from now: 1768292111004
+[16:00:11] [INFO] [Kiro] Calling generateContentStream with model: claude-opus-4-5-20251101 (real streaming)
+[16:00:19] [INFO] [Kiro] Ignoring tool: WebSearch
+[16:00:19] [INFO] [Kiro] Tools compressed: 60657 -> 13442 bytes (19 tools)
+[16:00:19] [INFO] [Kiro] ========== Request Start ==========
+[16:00:19] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[16:00:19] [INFO] [Kiro] Model: claude-opus-4-5-20251101
+[16:00:19] [INFO] [Kiro] Request body size: 296312 bytes
+[16:00:19] [INFO] [Kiro] Messages count: 69
+[16:00:19] [INFO] [Kiro] Tools count: 20
+[16:00:19] [INFO] [Kiro] System prompt length: 2 chars
+[16:00:19] [INFO] [Kiro] Retry count: 0/3
+[16:00:19] [INFO] 1/13/2026, 8:00:19 AM
+[16:00:19] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[16:00:19] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[16:00:19] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:00:19] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:00:19] [INFO] [Content Generation] Model: claude-opus-4-5-20251101, Stream: false
+[16:00:19] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:00:19] [INFO] [Content Generation] Re-selected service adapter based on model: claude-opus-4-5-20251101
+[16:00:19] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[16:00:19] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[16:00:19] [INFO] [Kiro] Expiry date: 1768294035842, Current time: 1768291219794, 15 minutes from now: 1768292119794
+[16:00:19] [INFO] [Kiro] Calling generateContent with model: claude-opus-4-5-20251101
+[16:00:20] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[16:00:20] [INFO] [Kiro] Received 500 server error. Retrying in 1000ms... (attempt 1/3)
+[16:00:21] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[16:00:22] [INFO] [Kiro] Received 500 server error. Retrying in 2000ms... (attempt 2/3)
+[16:00:24] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[16:00:25] [INFO] [Kiro] Response received - Status: 200 OK
+[16:00:25] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 08:00:24 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "9b44e887-42b7-4e1f-b7d5-ac18737045fe", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[16:00:25] [INFO] [Kiro] Response received - Status: 200 OK
+[16:00:25] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 08:00:24 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "9b596b59-6232-459b-9da4-1c90bed6c286", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[16:00:25] [INFO] [Kiro] Tool called: Read (ID: tooluse_zoLZlEFLebrXWnmWVzUpRB)
+[16:00:25] [INFO] [Kiro] Tool called: Read (ID: tooluse_vKHdtrUyBJpjxIY6DqGyqx)
+[16:00:25] [INFO] [Kiro] Received 500 server error. Retrying in 4000ms... (attempt 3/3)
+[16:00:26] [INFO] [Kiro] ========== Request Success ==========
+[16:00:26] [INFO] [Kiro] Stream completed successfully
+[16:00:26] [INFO] [Kiro] ========================================
+[16:00:26] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=72177, output=115, input=72062
+[16:00:26] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (9ed4f457-f6e7-4641-9641-b91f97add93f, 1) after successful stream request
+[16:00:26] [INFO] [Kiro] ========== Request Success ==========
+[16:00:26] [INFO] [Kiro] Stream completed successfully
+[16:00:26] [INFO] [Kiro] ========================================
+[16:00:26] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=78319, output=124, input=78195
+[16:00:26] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (9ed4f457-f6e7-4641-9641-b91f97add93f, 1) after successful stream request
+[16:00:26] [INFO] [API Potluck] Running scheduled health sync from pool...
+[16:00:26] [INFO] [API Potluck] Health sync complete: 0/0 healthy
+[16:00:28] [INFO] 1/13/2026, 8:00:28 AM
+[16:00:28] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[16:00:28] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[16:00:28] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[16:00:28] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[16:00:28] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: true
+[16:00:28] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[16:00:28] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[16:00:28] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[16:00:28] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[16:00:28] [INFO] [Kiro] Expiry date: 1768294044042, Current time: 1768291228950, 15 minutes from now: 1768292128950
+[16:00:28] [INFO] [Kiro] Calling generateContentStream with model: claude-sonnet-4-5-20250929 (real streaming)
+[16:01:10] [INFO] [Kiro] Ignoring tool: WebSearch
+[16:01:10] [INFO] [Kiro] Tools compressed: 56583 -> 11869 bytes (16 tools)
+[16:01:10] [INFO] [Kiro] ========== Request Start ==========
+[16:01:10] [INFO] [Kiro] URL: https://q.us-east-1.amazonaws.com/generateAssistantResponse
+[16:01:10] [INFO] [Kiro] Model: claude-sonnet-4-5-20250929
+[16:01:10] [INFO] [Kiro] Request body size: 541670 bytes
+[16:01:10] [INFO] [Kiro] Messages count: 341
+[16:01:10] [INFO] [Kiro] Tools count: 17
+[16:01:10] [INFO] [Kiro] System prompt length: 2 chars
+[16:01:10] [INFO] [Kiro] Retry count: 0/3
+[16:01:10] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[16:01:11] [ERROR] [Kiro] API call failed (Status: 500, Code: ERR_BAD_RESPONSE): Request failed with status code 500
+[16:01:11] [ERROR] [Kiro] Request diagnostics: { "model": "claude-opus-4-5-20251101", "msgCount": 1, "totalChars": 98, "hasTools": true, "hasSystem": true, "hasThinking": false, "msgSummary": [ { "idx": 0, "role": "user", "contentLen": 70 } ] }
+[16:01:11] [ERROR] [Server] Error during unary processing: AxiosError: Request failed with status code 500 at settle (file:///app/node_modules/axios/lib/core/settle.js:19:12) at IncomingMessage.handleStreamEnd (file:///app/node_modules/axios/lib/adapters/http.js:599:11) at IncomingMessage.emit (node:events:536:35) at endReadableNT (node:internal/streams/readable:1698:12) at process.processTicksAndRejections (node:internal/process/task_queues:82:21) at Axios.request (file:///app/node_modules/axios/lib/core/Axios.js:45:41) at process.processTicksAndRejections (node:internal/process/task_queues:95:5) at async KiroApiService.callApi (file:///app/src/providers/claude/claude-kiro.js:1248:30) at async KiroApiService.generateContent (file:///app/src/providers/claude/claude-kiro.js:1371:26) at async handleUnaryRequest (file:///app/src/utils/common.js:458:32) at async handleContentGenerationRequest (file:///app/src/utils/common.js:642:9) at async handleAPIRequests (file:///app/src/services/api-manager.js:52:13) at async Server.requestHandler (file:///app/src/handlers/request-handler.js:231:32)
+[16:01:11] [INFO] [Provider Pool] Marking claude-kiro-oauth as unhealthy due to stream error
+[16:01:11] [INFO] 1/13/2026, 8:01:11 AM
+[16:01:11] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages?beta=true
+[16:01:11] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[16:01:11] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[16:01:11] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[16:01:11] [INFO] [Content Generation] Model: claude-opus-4-5-20251101, Stream: false
+[16:01:11] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[16:01:11] [INFO] [Content Generation] Re-selected service adapter based on model: claude-opus-4-5-20251101
+[16:01:11] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[16:01:11] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[16:01:11] [INFO] [Kiro] Expiry date: 1768294044042, Current time: 1768291271652, 15 minutes from now: 1768292171652
+[16:01:11] [INFO] [Kiro] Calling generateContent with model: claude-opus-4-5-20251101
+[16:01:11] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[16:01:13] [INFO] [Kiro] Received 500 server error. Retrying in 1000ms... (attempt 1/3)
+[16:01:14] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[16:01:14] [INFO] 1/13/2026, 8:01:14 AM
+[16:01:14] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages
+[16:01:14] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[16:01:14] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[16:01:14] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[16:01:14] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: false
+[16:01:14] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: ea10bf15-b455-4ebe-a03f-af8e0bfe518e (t)
+[16:01:14] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[16:01:14] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[16:01:14] [INFO] [System Prompt Manager] System prompt updated in file for provider 'claude'.
+[16:01:14] [INFO] [Kiro] Expiry date: 1768294044042, Current time: 1768291274560, 15 minutes from now: 1768292174560
+[16:01:14] [INFO] [Kiro] Calling generateContent with model: claude-sonnet-4-5-20250929
+[16:01:14] [INFO] [Kiro] Received 500 server error. Retrying in 2000ms... (attempt 2/3)
+[16:01:16] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[16:01:17] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (ea10bf15-b455-4ebe-a03f-af8e0bfe518e, t) after successful unary request
+[16:01:18] [INFO] [Kiro] Received 500 server error. Retrying in 4000ms... (attempt 3/3)
+[16:01:19] [INFO] [Kiro] Response received - Status: 200 OK
+[16:01:19] [INFO] [Kiro] Response headers: { "date": "Tue, 13 Jan 2026 08:01:19 GMT", "content-type": "application/json", "transfer-encoding": "chunked", "connection": "close", "x-amzn-requestid": "365eb2d1-7d65-4526-bb7f-c6323702d2cb", "x-amzn-codewhisperer-conversation-id": "", "x-xss-protection": "1; mode=block", "strict-transport-security": "max-age=47304000; includeSubDomains", "x-frame-options": "DENY", "cache-control": "no-cache", "x-content-type-options": "nosniff" }
+[16:01:20] [INFO] [Kiro] Tool called: Read (ID: tooluse_HA3YgV18iljhGYCQboGMK6)
+[16:01:20] [INFO] [Kiro] ========== Request Success ==========
+[16:01:20] [INFO] [Kiro] Stream completed successfully
+[16:01:20] [INFO] [Kiro] ========================================
+[16:01:20] [INFO] [Kiro] Token calculation from contextUsagePercentage: total=153116, output=72, input=153044
+[16:01:20] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (ea10bf15-b455-4ebe-a03f-af8e0bfe518e, t) after successful stream request
+[16:01:22] [INFO] [Kiro] History does not end with assistantResponseMessage, adding empty one
+[16:01:23] [ERROR] [Kiro] API call failed (Status: 500, Code: ERR_BAD_RESPONSE): Request failed with status code 500
+[16:01:23] [ERROR] [Kiro] Request diagnostics: { "model": "claude-opus-4-5-20251101", "msgCount": 1, "totalChars": 98, "hasTools": true, "hasSystem": true, "hasThinking": false, "msgSummary": [ { "idx": 0, "role": "user", "contentLen": 70 } ] }
+[16:01:23] [ERROR] [Server] Error during unary processing: AxiosError: Request failed with status code 500 at settle (file:///app/node_modules/axios/lib/core/settle.js:19:12) at IncomingMessage.handleStreamEnd (file:///app/node_modules/axios/lib/adapters/http.js:599:11) at IncomingMessage.emit (node:events:536:35) at endReadableNT (node:internal/streams/readable:1698:12) at process.processTicksAndRejections (node:internal/process/task_queues:82:21) at Axios.request (file:///app/node_modules/axios/lib/core/Axios.js:45:41) at process.processTicksAndRejections (node:internal/process/task_queues:95:5) at async KiroApiService.callApi (file:///app/src/providers/claude/claude-kiro.js:1248:30) at async KiroApiService.generateContent (file:///app/src/providers/claude/claude-kiro.js:1371:26) at async handleUnaryRequest (file:///app/src/utils/common.js:458:32) at async handleContentGenerationRequest (file:///app/src/utils/common.js:642:9) at async handleAPIRequests (file:///app/src/services/api-manager.js:52:13) at async Server.requestHandler (file:///app/src/handlers/request-handler.js:231:32)
+[16:01:23] [INFO] [Provider Pool] Marking claude-kiro-oauth as unhealthy due to stream error
+[16:02:33] [INFO] 1/13/2026, 8:02:33 AM
+[16:02:33] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages
+[16:02:33] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[16:02:33] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[16:02:33] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[16:02:33] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: false
+[16:02:33] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 66016935-4f61-4a5a-b8b9-a5bb72dba709 (n)
+[16:02:33] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[16:02:33] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[16:02:33] [INFO] [Kiro] Expiry date: 1768294054514, Current time: 1768291353595, 15 minutes from now: 1768292253595
+[16:02:33] [INFO] [Kiro] Calling generateContent with model: claude-sonnet-4-5-20250929
+[16:02:36] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (66016935-4f61-4a5a-b8b9-a5bb72dba709, n) after successful unary request
+[16:03:02] [INFO] 1/13/2026, 8:03:02 AM
+[16:03:02] [INFO] [Server] Received request: POST http://111.228.51.118:5000/v1/messages
+[16:03:02] [INFO] [Config] Ignoring invalid MODEL_PROVIDER in path segment: v1
+[16:03:02] [INFO] [API Service] Using pooled configuration for claude-kiro-oauth: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:03:02] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:03:02] [INFO] [Content Generation] Model: claude-sonnet-4-5-20250929, Stream: false
+[16:03:02] [INFO] [Adapter] getServiceAdapter, provider: claude-kiro-oauth, uuid: 9ed4f457-f6e7-4641-9641-b91f97add93f (1)
+[16:03:02] [INFO] [Content Generation] Re-selected service adapter based on model: claude-sonnet-4-5-20250929
+[16:03:02] [INFO] [Request Convert] Request format matches backend provider. No conversion needed.
+[16:03:02] [INFO] [Kiro] Expiry date: 1768294035842, Current time: 1768291382051, 15 minutes from now: 1768292282051
+[16:03:02] [INFO] [Kiro] Calling generateContent with model: claude-sonnet-4-5-20250929
+[16:03:05] [INFO] [Provider Pool] Increasing usage count for claude-kiro-oauth (9ed4f457-f6e7-4641-9641-b91f97add93f, 1) after successful unary request
+[16:03:11] [INFO] [Usage API] Returning cached usage data
+[16:03:11] [INFO] [Usage API] Returning cached usage data
+[16:03:11] [INFO] [Update] Not in a Git repository, will use GitHub API to check for updates
+[16:03:11] [INFO] [Update] Fetching latest version from GitHub API...
+[16:03:12] [INFO] [Update] Not in a Git repository, will use GitHub API to check for updates
+[16:03:12] [INFO] [Update] Fetching latest version from GitHub API...
+[16:03:15] [INFO] [Update] Local version: 2.6.5@sunzy+0.7, Latest version: v2.6.7, Has update: true, Method: github_api
