@@ -169,7 +169,7 @@ async function getAdapterUsage(adapter, providerType) {
         throw new Error('This adapter does not support usage query');
     }
     
-    throw new Error(`Unsupported provider type: ${providerType}`);
+    throw new Error(`Unsupported provider type`);
 }
 
 /**

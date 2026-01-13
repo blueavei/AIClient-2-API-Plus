@@ -435,7 +435,7 @@ export function getServiceAdapter(config) {
                 serviceInstances[providerKey] = new IFlowApiServiceAdapter(config);
                 break;
             default:
-                throw new Error(`Unsupported model provider: ${provider}`);
+                throw new Error(`Unsupported model provider`);
         }
     }
     return serviceInstances[providerKey];

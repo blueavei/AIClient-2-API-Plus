@@ -547,7 +547,7 @@ export async function handleOllamaChat(req, res, apiService, currentConfig, prov
                     // No healthy provider in pool, try to create service directly
                     console.warn(`[Ollama] No healthy provider found for ${detectedProvider} in pool`);
                     if (!apiService) {
-                        throw new Error(`No healthy provider available for ${detectedProvider}`);
+                        throw new Error(`No healthy provider available`);
                     }
                 }
             } else if (!apiService) {
@@ -654,7 +654,7 @@ export async function handleOllamaGenerate(req, res, apiService, currentConfig, 
                     // No healthy provider in pool, try to create service directly
                     console.warn(`[Ollama] No healthy provider found for ${detectedProvider} in pool`);
                     if (!apiService) {
-                        throw new Error(`No healthy provider available for ${detectedProvider}`);
+                        throw new Error(`No healthy provider available`);
                     }
                 }
             } else if (!apiService) {

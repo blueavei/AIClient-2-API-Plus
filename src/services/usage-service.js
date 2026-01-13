@@ -29,7 +29,7 @@ export class UsageService {
     async getUsage(providerType, uuid = null) {
         const handler = this.providerHandlers[providerType];
         if (!handler) {
-            throw new Error(`不支持的提供商类型: ${providerType}`);
+            throw new Error(`不支持的提供商类型`);
         }
         return handler(uuid);
     }
@@ -89,7 +89,7 @@ export class UsageService {
         const adapter = serviceInstances[providerKey];
         
         if (!adapter) {
-            throw new Error(`Kiro 服务实例未找到: ${providerKey}`);
+            throw new Error(`服务实例未找到`);
         }
         
         // 使用适配器的 getUsageLimits 方法
@@ -102,7 +102,7 @@ export class UsageService {
             return adapter.kiroApiService.getUsageLimits();
         }
         
-        throw new Error(`Kiro 服务实例不支持用量查询: ${providerKey}`);
+        throw new Error(`服务实例不支持用量查询`);
     }
 
     /**
@@ -115,7 +115,7 @@ export class UsageService {
         const adapter = serviceInstances[providerKey];
         
         if (!adapter) {
-            throw new Error(`Gemini CLI 服务实例未找到: ${providerKey}`);
+            throw new Error(`服务实例未找到`);
         }
         
         // 使用适配器的 getUsageLimits 方法
@@ -128,7 +128,7 @@ export class UsageService {
             return adapter.geminiApiService.getUsageLimits();
         }
         
-        throw new Error(`Gemini CLI 服务实例不支持用量查询: ${providerKey}`);
+        throw new Error(`服务实例不支持用量查询`);
     }
 
     /**
@@ -141,7 +141,7 @@ export class UsageService {
         const adapter = serviceInstances[providerKey];
         
         if (!adapter) {
-            throw new Error(`Antigravity 服务实例未找到: ${providerKey}`);
+            throw new Error(`服务实例未找到`);
         }
         
         // 使用适配器的 getUsageLimits 方法
@@ -154,7 +154,7 @@ export class UsageService {
             return adapter.antigravityApiService.getUsageLimits();
         }
         
-        throw new Error(`Antigravity 服务实例不支持用量查询: ${providerKey}`);
+        throw new Error(`服务实例不支持用量查询`);
     }
 
     /**

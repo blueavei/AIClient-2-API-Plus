@@ -55,7 +55,7 @@ export class ConverterFactory {
         const ConverterClass = this.#converterClasses.get(protocolPrefix);
         
         if (!ConverterClass) {
-            throw new Error(`No converter registered for protocol: ${protocolPrefix}`);
+            throw new Error(`No converter registered for protocol`);
         }
 
         return new ConverterClass();

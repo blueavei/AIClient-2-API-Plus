@@ -337,7 +337,7 @@ async function createOAuthCallbackServer(config, redirectUri, authClient, credPa
 async function handleGoogleOAuth(providerKey, currentConfig, options = {}) {
     const config = OAUTH_PROVIDERS[providerKey];
     if (!config) {
-        throw new Error(`未知的提供商: ${providerKey}`);
+        throw new Error(`未知的提供商`);
     }
     
     const port = parseInt(options.port) || config.port;

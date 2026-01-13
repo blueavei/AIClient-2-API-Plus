@@ -38,7 +38,7 @@ export class OpenAIResponsesConverter extends BaseConverter {
             case MODEL_PROTOCOL_PREFIX.GEMINI:
                 return this.toGeminiRequest(data);
             default:
-                throw new Error(`Unsupported target protocol: ${toProtocol}`);
+                throw new Error(`Unsupported target protocol`);
         }
     }
 
@@ -54,7 +54,7 @@ export class OpenAIResponsesConverter extends BaseConverter {
             case MODEL_PROTOCOL_PREFIX.GEMINI:
                 return this.toGeminiResponse(data, model);
             default:
-                throw new Error(`Unsupported target protocol: ${toProtocol}`);
+                throw new Error(`Unsupported target protocol`);
         }
     }
 
@@ -70,7 +70,7 @@ export class OpenAIResponsesConverter extends BaseConverter {
             case MODEL_PROTOCOL_PREFIX.GEMINI:
                 return this.toGeminiStreamChunk(chunk, model);
             default:
-                throw new Error(`Unsupported target protocol: ${toProtocol}`);
+                throw new Error(`Unsupported target protocol`);
         }
     }
 

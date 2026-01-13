@@ -99,7 +99,7 @@ export class OllamaConverter extends BaseConverter {
             case MODEL_PROTOCOL_PREFIX.GEMINI:
                 return this.toOpenAIRequest(data);
             default:
-                throw new Error(`Unsupported target protocol: ${targetProtocol}`);
+                throw new Error(`Unsupported target protocol`);
         }
     }
 

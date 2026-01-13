@@ -245,12 +245,12 @@ export function convertData(data, type, fromProvider, toProvider, model) {
 
     const toConversions = targetConversions[getProtocolPrefix(toProvider)];
     if (!toConversions) {
-        throw new Error(`No conversions defined for target protocol: ${getProtocolPrefix(toProvider)} for type: ${type}`);
+        throw new Error(`No conversions defined for target protocol`);
     }
 
     const conversionFunction = toConversions[getProtocolPrefix(fromProvider)];
     if (!conversionFunction) {
-        throw new Error(`No conversion function found from ${getProtocolPrefix(fromProvider)} to ${toProvider} for type: ${type}`);
+        throw new Error(`No conversion function found`);
     }
 
     console.log(conversionFunction);

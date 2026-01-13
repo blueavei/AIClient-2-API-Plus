@@ -48,7 +48,7 @@ export function convertData(data, type, fromProvider, toProvider, model) {
         const converter = ConverterFactory.getConverter(fromProtocol);
 
         if (!converter) {
-            throw new Error(`No converter found for protocol: ${fromProtocol}`);
+            throw new Error(`No converter found for protocol`);
         }
 
         // 根据类型调用相应的转换方法

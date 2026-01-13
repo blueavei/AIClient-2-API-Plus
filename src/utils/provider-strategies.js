@@ -19,7 +19,7 @@ class ProviderStrategyFactory {
             case MODEL_PROTOCOL_PREFIX.CLAUDE:
                 return new ClaudeStrategy();
             default:
-                throw new Error(`Unsupported provider protocol: ${providerProtocol}`);
+                throw new Error(`Unsupported provider protocol`);
         }
     }
 }
