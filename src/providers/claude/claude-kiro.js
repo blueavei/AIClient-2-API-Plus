@@ -43,13 +43,13 @@ const KIRO_MODELS = getProviderModels('claude-kiro-oauth');
 
 // 完整的模型映射表
 const FULL_MODEL_MAPPING = {
+    "claude-haiku-4-5":"claude-haiku-4.5",
+    "claude-opus-4-6":"claude-opus-4.6",
+    "claude-sonnet-4-6":"claude-sonnet-4.6",
     "claude-opus-4-5":"claude-opus-4.5",
     "claude-opus-4-5-20251101":"claude-opus-4.5",
-    "claude-haiku-4-5":"claude-haiku-4.5",
-    "claude-sonnet-4-5": "CLAUDE_SONNET_4_5_20250929_V1_0",
-    "claude-sonnet-4-5-20250929": "CLAUDE_SONNET_4_5_20250929_V1_0",
-    "claude-sonnet-4-20250514": "CLAUDE_SONNET_4_20250514_V1_0",
-    "claude-3-7-sonnet-20250219": "CLAUDE_3_7_SONNET_20250219_V1_0"
+    "claude-sonnet-4-5": "claude-sonnet-4.5",
+    "claude-sonnet-4-5-20250929": "claude-sonnet-4.5"
 };
 
 // 只保留 KIRO_MODELS 中存在的模型映射
